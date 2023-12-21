@@ -1,21 +1,46 @@
+// import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import '../styles/App.css';
 import Layout from './Layout';
-// import Quiz from './pages/Quiz';
-import Results from './pages/Result';
-// import Login from './pages/Login';
-// import Signup from './pages/Signup';
-// import Home from './pages/Home';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Quiz from './pages/Quiz';
+import Result from './pages/Result';
+import Signup from './pages/Signup';
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Layout />,
+    children: [
+      { path: '/', element: <Home /> },
+      { path: '/signup', element: <Signup /> },
+      { path: '/login', element: <Login /> },
+      { path: '/quiz', element: <Quiz /> },
+      { path: '/result', element: <Result /> }
+    ]
+  }
+]);
 
 function App() {
-  return (
-    <Layout>
-      {/* <Home/> */}
-      {/* <Signup/> */}
-      {/* <Login/> */}
-      {/* <Quiz /> */}
-      <Results/>
-    </Layout>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
+
+// function App() {
+//   return (
+//     <Router>
+//       <Layout>
+//         <Routes>
+//           <Route exact path="" element={<Home/>} />
+//           <Route exact path="/signup" element={<Signup/>} />
+//           <Route exact path="/login" element={<Login/>} />
+//           <Route exact path="/quiz" element={<Quiz/>} />
+//           <Route exact path="/result" element={<Result/>} />
+//         </Routes>
+//       </Layout>
+//     </Router>
+//   );
+// }
+
+// export default App;
