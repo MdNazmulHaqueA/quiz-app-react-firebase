@@ -1,5 +1,6 @@
 // import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { AuthProvider } from '../contexts/AuthContext';
 import '../styles/App.css';
 import Layout from './Layout';
 import Home from './pages/Home';
@@ -7,6 +8,7 @@ import Login from './pages/Login';
 import Quiz from './pages/Quiz';
 import Result from './pages/Result';
 import Signup from './pages/Signup';
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -22,7 +24,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  );
 }
 
 export default App;
@@ -30,6 +36,7 @@ export default App;
 // function App() {
 //   return (
 //     <Router>
+//  <AuthProvider>
 //       <Layout>
 //         <Routes>
 //           <Route exact path="" element={<Home/>} />
@@ -39,6 +46,7 @@ export default App;
 //           <Route exact path="/result" element={<Result/>} />
 //         </Routes>
 //       </Layout>
+//  </AuthProvider>
 //     </Router>
 //   );
 // }
