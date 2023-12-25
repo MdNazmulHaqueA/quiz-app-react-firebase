@@ -20,8 +20,8 @@ const router = createBrowserRouter([
       // Use the custom route components for private and public routes
       { path: '/signup', element: <PublicRoute element={Signup} /> },
       { path: '/login', element: <PublicRoute element={Login} /> },
-      { path: '/quiz', element: <PrivateRoute element={Quiz} /> },
-      { path: '/result', element: <PrivateRoute element={Result} /> },
+      { path: '/quiz/:id', element: <PrivateRoute element={Quiz} /> },
+      { path: '/result/:id', element: <PrivateRoute element={Result} /> },
       // { path: '/signup', element: <PublicRoute element={<Signup />} /> },
       // { path: '/login', element: <PublicRoute element={<Login />} /> },
       // { path: '/quiz', element: <PrivateRoute element={<Quiz />} /> },
