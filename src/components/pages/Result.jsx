@@ -33,7 +33,7 @@ export default function Result() {
           option.checked = true;
         }
       });
-
+      // checking if two arrays contains same values with lodash isEqual function
       if (_.isEqual(correctIndexes, checkedIndexes)) {
         score = score + 5;
       }
