@@ -1,6 +1,6 @@
-import classes from '../styles/Question.module.css';
+import classes from '../styles/Questions.module.css';
 import Answers from './Answers';
-export default function Question() {
+export default function Questions() {
   return (
     <div className={classes.question}>
       <div className={classes.qtitle}>
