@@ -21,9 +21,8 @@ export default function Summary({ score, noq }) {
     `https://api.pexels.com/v1/search?query=${getKeyword}&per_page=1`,
     'GET',
     {
-      // Authorization: process.env.REACT_APP_PEXELS_API_KEY
-      Authorization: process.env.REACT_APP_PEXELS_API_KEY
-
+      // Authorization: process.env.REACT_APP_PEXEL_API_KEY
+      Authorization: import.meta.env.VITE_PEXEL_API_KEY
     }
   );
 
