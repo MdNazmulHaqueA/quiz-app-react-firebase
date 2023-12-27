@@ -6,9 +6,9 @@ import classes from '../styles/MiniPlayer.module.css';
 export default function MiniPlayer({ title, id }) {
   const buttonRef = useRef();
   const [status, setStatus] = useState(false);
-  const videoUrl = `https://www.youtube.com/watch?v=${id}`;
+  // const videoUrl = `https://www.youtube.com/watch?v=${id}`;
   // Fixed problem -> Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://www.youtube.com') does not match the recipient window's origin ('http://localhost:5173').
-  // const videoUrl = 'https://www.youtube.com/watch?v=/' + id + '?showinfo=0&enablejsapi=1&origin=http://localhost:5173';
+  const videoUrl = 'https://www.youtube.com/watch?v=/' + id + '?showinfo=0&enablejsapi=1&origin=http://localhost:5173';
 
   function toggleMiniPlayer() {
     if (!status) {
